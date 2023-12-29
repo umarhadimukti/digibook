@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Open+Sans:wght@300;400;500&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Poppins';
+}
+
+.text-primary {
+  color: #33186B;
+}
+
+.border-bottom-primary {
+  border-bottom: 2px solid #7360DF;
+}
+
+/* row1 */
+.row1 .input-wrapper input {
+  width: 50%;
+  border-radius: 30px;
+  border: 1px solid gray;
+  padding: 10px 20px;
+}
+.row1 .input-wrapper ion-icon {
+  position: relative;
+  top: -36px;
+  right: -500px;
+  font-size: 25px;
+  color: gray;
+}
+.row1 .col-md-2 span {
+  font-size: 1rem;
+}
+/* row1 end */
+
+/* row2 */
+.row2 h4 {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.content-search {
+  margin-bottom: 50px;
+}
+.row2 h5.fw-light {
+  margin-bottom: 20px;
+}
+.swiper1 {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+.swiper1 .swiper-slide {
+  background: #D8E4EA; /* Warna biru terang dengan transparansi */
+  padding: 25px 20px 20px 20px;
+  backdrop-filter: blur(40px) brightness(1.2); /* Efek blur dengan brightness */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan */
+  border-radius: 20px;
+  height: 300px;
+  text-decoration: none;
+}
+.swiper1 .swiper-slide:hover {
+  cursor: grab;
+}
+.swiper1 .swiper-slide:active {
+  cursor: grabbing;
+}
+.swiper-slide .wrapper-book {
+  height: 250px;
+  overflow: hidden;
+  display: flex;
+  gap: 20px;
+}
+.wrapper-book img {
+  height: 100%;
+  border-radius: 20px;
+  filter: brightness(0.8); /* Menggelapkan gambar */
+}
+.wrapper-book .description h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.description small {
+  font-family: 'Open sans';
+  font-size: 13px;
+}
+.description .wrapper-rating {
+  width: 70px;
+  margin: 10px 0px;
+}
+.description .wrapper-rating ion-icon {
+  color: #de9a07
+}
+.description .excerpt {
+  height: 148px;
+  font-family: 'Open sans';
+  overflow: hidden;
+  font-size: 14px;
+}
+/* row2 end */
+
+/* row3 */
+.row3 h4 {
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.row3 .swiper2 {
+  overflow: hidden;
+}
+.row3 .swiper-slide {
+  border-radius: 10px;
+}
+.row3 .swiper-slide .wrapper-book {
+  height: 300px;
+}
+/* row3 end */
+
+/* categories page */
+
+/* categories page end */
+
+
+@media only screen and (max-width: 600px) {
+  .row1 .input-wrapper input {
+    width: 100%;
+  }
+  .row1 .input-wrapper ion-icon {
+    position: relative;
+    top: -36px;
+    right: -320px;
+  }
+  .row1 .col-md-2 span {
+    position: relative;
+    right: -180px;
+  }
+  
+}

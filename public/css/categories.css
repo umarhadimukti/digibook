@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Open+Sans:wght@300;400;500&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Poppins';
+}
+
+.row1 h4 {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.swiper1 {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+.swiper1 .swiper-slide {
+  background: #D8E4EA; /* Warna biru terang dengan transparansi */
+  padding: 10px;
+  height: 250px;
+  backdrop-filter: blur(40px) brightness(1.2); /* Efek blur dengan brightness */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan */
+  border-radius: 10px;
+  text-decoration: none;
+}
+.swiper1 .swiper-slide:hover {
+  cursor: grab;
+}
+.swiper1 .swiper-slide:active {
+  cursor: grabbing;
+}
+.wrapper-category img {
+  width: 100%;
+  border-radius: 10px;
+  filter: brightness(0.4); /* Menggelapkan gambar */
+  position: relative;
+  left: -20px;
+  bottom: -10px;
+  border: 2px solid red;
+}
+.wrapper-category h4 {
+  position: relative;
+  top: -145px;
+  left: 120px;
+  color: #e6ebf2;
+}
+.swiper1 .swiper-pagination {
+  position: relative;
+  top: -120px;
+}
