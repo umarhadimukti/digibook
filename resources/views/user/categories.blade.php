@@ -21,7 +21,7 @@
           <div class="swiper-wrapper">
             @foreach ($categories as $category)
             <!-- Slides -->
-            <a href="/dashboard/category/{{ $category->slug }}" class="swiper-slide">
+            <a href="/dashboard?category={{ $category->slug }}" class="swiper-slide">
               <div class="wrapper-category">
                 <img src="https://source.unsplash.com/650x450?{{ $category->name }}">
                 <h4>{{ $category->name }}</h4>

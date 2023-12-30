@@ -9,14 +9,15 @@ use Illuminate\View\View;
 
 class BookController extends Controller
 {
-    public function index(Request $request): View
+    public function index(): View
     {
         return view('user.books', [
             'title' => 'Semua Buku',
             'active' => 'books',
             'books' => Book::all(),
             'books_latest' => Book::latest()->get(),
-            'books_filter' => Book::latest()->filter(request(['keyword']))->get(),
+            'books_filter' => Book::latest()->filter(request(['keyword', 'category']))->get(),
+            'books_categories' => Book::latest()->categories(request('category'))->get(),
         ]);
     }
 

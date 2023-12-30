@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Open+Sans:wght@300;400;500&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Poppins';
+}
+.wrapper-login {
+  height: 500px;
+  position: relative;
+  top: 30px;
+}
+.wrapper-login img {
+  margin-bottom: 30px;
+}
+.wrapper-login .text-login {
+  margin-bottom: 20px;
+}
+.text-login p {
+  width: 400px;
+}
+.form-login {
+  width: 80%;
+}
+.form-login input {
+  padding: 10px 25px;
+  border-radius: 30px;
+  border: 1px solid gray;
+  margin-bottom: 20px;
+}
+.form-login .btn-register {
+  width: 100%;
+  border-radius: 40px;
+  padding: 15px;
+  margin-top: 15px;
+  background-color: #24baff;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+.form-login .btn-register:hover {
+  background-color: #a6def7;
+  color: black;
+}
+.form-login .btn-to-login {
+  width: 100%;
+  border-radius: 40px;
+  padding: 15px;
+  margin-top: 15px;
+  background-color: #e0aa14;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+.form-login .btn-to-login:hover {
+  background-color: #f7d165;
+  color: black;
+}
+
+@media only screen and (max-width: 600px) {
+  .container-image-login {
+    display: none;
+  }
+  .wrapper-login {
+    height: 100vh;
+    top: 10px;
+  }
+  .text-login p {
+    width: 300px;
+  }
+  .form-login {
+    width: 100%;
+  }
+}

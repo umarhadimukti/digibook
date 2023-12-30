@@ -23,9 +23,22 @@ class Book extends Model
     // query scope (local)
     public function scopeFilter(Builder $query, array $filters): void
     {
-        // jika ada request pencarian
+        // jika ada request pencarian, maka cari buku berdasarkan keyword
         $query->when($filters['keyword'] ?? false, function ($query, $keyword) {
             $query->where("title", "like", "%" . $keyword . "%")->orWhere("excerpt", "like", "%" . $keyword . "%")->orWhere("description", "like", "%" . $keyword . "%");
+        });
+
+        // jika ada request kategori, maka cari buku berdasarkan kategori
+        $query->when($filters['category'] ?? false, function ($query, $category) {
+            $query->whereHas('category', fn ($query) => $query->where('slug', $category));
+        });
+    }
+
+    public function scopeCategories(Builder $query, $category): void
+    {
+        // jika ada request kategori, maka cari buku berdasarkan kategori
+        $query->when($category ?? false, function ($query, $category) {
+            $query->whereHas('category', fn ($query) => $query->where('slug', $category));
         });
     }
 

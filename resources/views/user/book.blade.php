@@ -21,7 +21,7 @@
         </div>
         <div class="col-12 col-md-8">
           <h4>{{ $book->title }}</h4>
-          <small>Dipost oleh {{ $book->user->name }} | ({{ $book->created_at->diffForHumans() }}) | Kategori <a href="/dashboard/category/{{ $book->category->slug }}" class="text-secondary text-decoration-none">{{ $book->category->name }}</a></small>
+          <small>Dipost oleh {{ $book->user->name }} | ({{ $book->created_at->diffForHumans() }}) | Kategori <a href="/dashboard?category={{ $book->category->slug }}" class="text-secondary text-decoration-none">{{ $book->category->name }}</a></small>
           <div class="wrapper-rating d-flex gap-2 justify-content-center align-items-center">
             <ion-icon name="star"></ion-icon>
             {{ $book->rating }} / 5.0

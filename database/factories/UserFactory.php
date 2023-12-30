@@ -30,6 +30,7 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'password' => Hash::make('password'),
             'phone' => $this->faker->phoneNumber(),
+            'role_id' => 2,
         ];
     }
 

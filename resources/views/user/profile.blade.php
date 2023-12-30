@@ -13,7 +13,13 @@
     @include('partials.navbar')
 
     <div class="container py-4">
-  
+      <div class="row1 row">
+        <h4>Profil {{ auth()->user()->name }}</h4>
+        <form action="{{ route('logout') }}" method="post">
+          @csrf
+          <button type="submit" class="btn btn-danger">Keluar</button>
+        </form>
+      </div>
     </div>
 
     {{-- bootstrap js --}}
