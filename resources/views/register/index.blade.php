@@ -24,16 +24,31 @@
             <form method="POST" class="form-login" action="{{ route('register') }}">
               @csrf
               <div>
-                <input type="text" name="fullname" class="form-control" id="fullname" placeholder="Nama Lengkap">
+                <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Nama Lengkap" value="{{ old('name') }}">
+                @error('name')
+                  <div div class="invalid-feedback">{{ $message }}</div>
+                @enderror
               </div>
               <div>
-                <input type="email" name="email" class="form-control" id="email" placeholder="Alamat Email">
+                <input type="text" name="username" class="form-control @error('name') is-invalid @enderror" id="username" placeholder="Username" value="{{ old('username') }}">
+                @error('username')
+                  <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
               </div>
               <div>
-                <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                <input type="email" name="email" class="form-control @error('name') is-invalid @enderror" id="email" placeholder="Alamat Email" value="{{ old('email') }}">
+                @error('email')
+                  <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
               </div>
               <div>
-                <input type="password" name="password2" class="form-control" id="password2" placeholder="Konfirmasi Password">
+                <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="password" placeholder="Password" required>
+                @error('password')
+                  <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+              </div>
+              <div>
+                <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" placeholder="Konfirmasi Password" required>
               </div>
               <button type="submit" name="login" class="btn btn-register">Daftar Akun</button>
               <a href="{{ route('login') }}" class="btn btn-to-login">Masuk</a>
@@ -41,7 +56,7 @@
           </div>
         </div>
       </div>
-      <p class="text-center text-secondary">&copy; 2023. Umar Hadi Mukti. Digital Book</p
+      <p class="text-center text-secondary">&copy; 2023. Umar Hadi Mukti. Digital Book</p>
     </div>
 
     {{-- bootstrap js --}}

@@ -20,6 +20,11 @@ body {
 .form-login {
   width: 80%;
 }
+.alert-dismissible {
+  width: 510px;
+  border-radius: 40px;
+  padding: 15px 30px;
+}
 .form-login input {
   padding: 10px 25px;
   border-radius: 30px;
