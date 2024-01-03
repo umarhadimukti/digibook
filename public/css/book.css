@@ -26,5 +26,21 @@ body {
   margin-top: 10px;
 }
 .col-md-8 .wrapper-rating ion-icon {
-  color: #de9a07
+  color: #de9a07;
+}
+.btn-download {
+  width: 150px;
+  padding: 10px 10px;
+  margin-top: 10px;
+  background-color: #5fe86b;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 30px;
+}
+.btn-download:hover {
+  background-color: #48cf54;
+}
+.btn-download ion-icon {
+  font-size: 20px;
 }

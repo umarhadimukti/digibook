@@ -12,13 +12,48 @@
     {{-- include navbar --}}
     @include('partials.navbar')
 
-    <div class="container py-4">
+    <div class="container py-4 mt-5">
       <div class="row1 row">
-        <h4>Profil {{ auth()->user()->name }}</h4>
-        <form action="{{ route('logout') }}" method="post">
-          @csrf
-          <button type="submit" class="btn btn-danger">Keluar</button>
-        </form>
+        <div class="col-12 col-md-4">
+          <div class="wrapper-navigation-1">
+            <div class="profile-card">
+              <h5>{{ auth()->user()->name }}</h5>
+              <h6 class="text-secondary">{{ auth()->user()->username }}</h6>
+              <h6 class="text-secondary">{{ auth()->user()->email }}</h6>
+              <h6 class="text-secondary">{{ auth()->user()->phone }}</h6>
+            </div>
+            <div class="navigation">
+              <form action="{{ route('logout') }}" onsubmit="return confirm('Yakin ingin keluar?')" method="post">
+                @csrf
+                <button type="submit" class="btn btn-keluar">
+                  <ion-icon name="log-out-outline"></ion-icon>
+                  <span>Keluar</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-8 wrapper-navigation-2">
+          <a href="{{ route('dashboard.books.books.index') }}" class="link-item">
+            <ion-icon name="book-outline"></ion-icon>
+            <h5>Daftar Buku</h5>
+          </a>
+          <a href="{{ route('dashboard.books.books.create') }}" class="link-item">
+            <ion-icon name="add-circle-outline"></ion-icon>
+            <h5>Tambah Buku</h5>
+          </a>
+
+          @if (auth()->user()->role_id == 1)
+            <a href="{{ route('dashboard.categories.categories.index') }}" class="link-item">
+              <ion-icon name="grid-outline"></ion-icon>
+              <h5>Tambah Kategori</h5>
+            </a>
+            <a href="{{ route('user.dashboard.export') }}" class="link-item">
+              <ion-icon name="add-circle-outline"></ion-icon>
+              <h5>Export Semua Data Buku</h5>
+            </a>
+          @endif
+        </div>
       </div>
     </div>
 

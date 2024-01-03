@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Open+Sans:wght@300;400;500&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Poppins';
+}
+.row1 h5 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.row1 .wrapper-navigation-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.navigation .btn-keluar {
+  background-color: #ffdbeb;
+  width: 250px;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.navigation .btn-keluar:hover {
+  background-color: #f7c1d9;
+}
+.btn-keluar ion-icon {
+  font-size: 25px;
+}
+.btn-keluar span {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.wrapper-navigation-2 {
+  /* border: 2px solid black; */
+}
+.wrapper-navigation-2 form input {
+  border-radius: 20px;
+  padding: 10px 20px;
+  border: 1px solid gray;
+}
+.wrapper-navigation-2 form select {
+  border-radius: 20px;
+  padding: 10px 20px;
+  border: 1px solid gray;
+}
+.wrapper-navigation-2 form textarea {
+  border-radius: 20px;
+  border: 1px solid gray;
+}
+.wrapper-navigation-2 form select:hover {
+  cursor: pointer;
+  background-color: #ebe9e6;
+}
+.wrapper-navigation-2 form .btn-tambah {
+  width: 150px;
+  padding: 10px 15px;
+  background-color: #2ad100;
+  color: white;
+  border-radius: 20px;
+  margin-top: 15px;
+}
+.wrapper-navigation-2 form .btn-tambah:hover {
+  background-color: #baebae;
+  color: black;
+}

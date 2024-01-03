@@ -11,7 +11,7 @@ class RedirectController extends Controller
     public function check(): RedirectResponse
     {
         if (Auth::user()->role_id == 1) {
-            return redirect()->route('admin.dashboard.books');
+            return redirect()->route('user.dashboard.profile');
         } else {
             return redirect()->route('user.dashboard.books');
         }

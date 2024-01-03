@@ -23,8 +23,12 @@
             <!-- Slides -->
             <a href="/dashboard?category={{ $category->slug }}" class="swiper-slide">
               <div class="wrapper-category">
-                <img src="https://source.unsplash.com/650x450?{{ $category->name }}">
-                <h4>{{ $category->name }}</h4>
+                @if ($category->image)
+                  <img src="{{ asset('storage/' . $category->image) }}" width="450" height="250">
+                @else
+                  <img src="https://source.unsplash.com/650x450?{{ $category->name }}">
+                @endif
+                <h4 class="text-center">{{ $category->name }}</h4>
               </div>
             </a>
             @endforeach

@@ -22,6 +22,21 @@ class UserSeeder extends Seeder
             'phone' => '089673356109',
             'role_id' => 1,
         ]);
-        User::factory(30)->create();
+        User::create([
+            'name' => 'Umar Hadi Mukti',
+            'username' => 'umarhadimukti30',
+            'email' => 'umar@digibook.test',
+            'password' => Hash::make('Keroncong30'),
+            'phone' => '089673356109',
+            'role_id' => 1,
+        ]);
+        User::create([
+            'name' => 'DetikCom',
+            'username' => 'detikcom_bestie',
+            'email' => 'detikcom@digibook.test',
+            'password' => Hash::make('detikcom'),
+            'phone' => '089673356109',
+            'role_id' => 1,
+        ]);
     }
 }

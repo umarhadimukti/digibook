@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 20);
             $table->string('slug')->unique();
+            $table->string('image');
             $table->timestamps();
         });
     }

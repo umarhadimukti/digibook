@@ -17,10 +17,11 @@
           </form>
         </div>
         <div class="col-12 col-md-2">
-          <span>Halo, Umar Hadi Mukti</span>
+          <span>Halo, {{ auth()->user()->name }}</span>
         </div>
       </div>
 
+      {{-- jika hanya ada request keyword dan data buku kosong, tampilkan error message --}}
       @if (request()->only('keyword') && count(request()->all()) == 1 && !$books_filter->count())
         <div class="row">
           <h5>Buku yang dicari tidak ada</h5>
@@ -28,6 +29,7 @@
             <img src="{{ asset('./img/notfound.jpg') }}" width="300" height="300" alt="">
           </div>
         </div>
+      {{-- jika hanya ada request keyword dan data buku tersedia, tampilkan buku --}}
       @elseif (request()->only('keyword') && count(request()->all()) == 1 && $books_filter->count())
         <div class="row2 row mt-4 content-search">
           <h5 class="fw-light fs-5 d-flex justify-content-start align-items-center gap-2">
@@ -52,7 +54,7 @@
                       <ion-icon name="star"></ion-icon>
                       <small class="text-dark">{{ $book->rating }} / 5.0</small>
                     </div>
-                    <p class="excerpt text-dark">{{ $book->excerpt }}</p>
+                    <p class="excerpt text-dark">{{ $book->description }}</p>
                   </div>
                 </div>
               </a>
@@ -62,6 +64,7 @@
         </div>
       @endif
 
+      {{-- jika hanya ada request category dan data buku kosong, tampilkan error message --}}
       @if (request()->only('category') && !$books_filter->count())
         <div class="row">
           <h5>Tidak ada buku di kategori <span class="fw-bold">{{ request('category') }}</span></h5>
@@ -70,6 +73,7 @@
           </div>
         </div>
       @else
+        {{-- jika hanya ada request category dan data buku tersedia, tampilkan buku --}}
         @if (request()->only('category') && $books_filter->count())
           {{-- bagian buku terbaru --}}
           <div class="row2 row mt-4">
@@ -90,7 +94,7 @@
                         <ion-icon name="star"></ion-icon>
                         <small class="text-dark">{{ $books_filter[$i]->rating }} / 5.0</small>
                       </div>
-                      <p class="excerpt text-dark">{{ $books_filter[$i]->excerpt }}</p>
+                      <p class="excerpt text-dark">{{ $books_filter[$i]->description }}</p>
                     </div>
                   </div>
                 </a>
@@ -118,7 +122,7 @@
                         <ion-icon name="star"></ion-icon>
                         <small class="text-dark">{{ $books_categories[$i]->rating }} / 5.0</small>
                       </div>
-                      <p class="excerpt text-dark">{{ $books_categories[$i]->excerpt }}</p>
+                      <p class="excerpt text-dark">{{ $books_categories[$i]->description }}</p>
                     </div>
                   </div>
                 </a>

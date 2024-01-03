@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\Book;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
+use App\Http\Controllers\Controller;
 
 class ProfileController extends Controller
 {
@@ -14,5 +16,12 @@ class ProfileController extends Controller
             'title' => 'Profil Saya',
             'active' => 'profile',
         ]);
+    }
+
+    public function export_pdf()
+    {
+        $data['books'] = Book::all();
+        $pdf = Pdf::loadView('pdf.cetakbuku', $data);
+        return $pdf->download(time() . 'digibook_databuku.pdf');
     }
 }
