@@ -20,7 +20,6 @@ class BookFactory extends Factory
         return [
             'title' => $this->faker->sentence(mt_rand(3, 6)),
             'slug' => $this->faker->unique()->slug(mt_rand(4, 6)),
-            'excerpt' => $this->faker->sentence(mt_rand(3, 10)),
             'description' => collect($this->faker->paragraphs(mt_rand(10, 20)))->implode(""),
             'cover' => $this->faker->imageUrl(600, 900, 'books', true),
             'book' => $this->faker->word() . '.pdf',

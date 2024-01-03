@@ -16,7 +16,7 @@
       <div class="row1 row">
         <div class="col-12 col-md-3">
           <div class="wrapper-cover">
-            <img src="{{ $book->cover }}" alt="">
+            <img src="{{ asset('storage/' . $book->cover) }}" alt="">
           </div>
         </div>
         <div class="col-12 col-md-8">
@@ -26,7 +26,13 @@
             <ion-icon name="star"></ion-icon>
             {{ $book->rating }} / 5.0
           </div>
-          <p class="mt-4">{{ $book->description }}</p>
+          <div class="wrapper-download">
+            <a href="/books-download/download?book={{ $book->book }}" class="btn btn-download">
+              <ion-icon name="download-outline"></ion-icon>
+              Download
+            </a>
+          </div>
+          <p class="mt-3">{{ $book->description }}</p>
         </div>
       </div>
     </div>

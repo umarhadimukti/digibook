@@ -62,3 +62,15 @@ body {
   position: relative;
   top: 2px;
 }
+.btn-hapus {
+  border: none;
+}
+.btn-tambah {
+  width: 200px;
+  padding: 10px 25px;
+  border-radius: 10px;
+  background-color: #dee0df;
+}
+.btn-tambah:hover {
+  background-color: #cdd4d0;
+}

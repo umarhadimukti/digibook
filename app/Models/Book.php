@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -9,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Book extends Model
 {
-    use HasFactory;
+    use HasFactory, Sluggable;
 
     // mass assignment guard id
     protected $guarded = ['id'];
@@ -25,7 +26,7 @@ class Book extends Model
     {
         // jika ada request pencarian, maka cari buku berdasarkan keyword
         $query->when($filters['keyword'] ?? false, function ($query, $keyword) {
-            $query->where("title", "like", "%" . $keyword . "%")->orWhere("excerpt", "like", "%" . $keyword . "%")->orWhere("description", "like", "%" . $keyword . "%");
+            $query->where("title", "like", "%" . $keyword . "%")->orWhere("description", "like", "%" . $keyword . "%");
         });
 
         // jika ada request kategori, maka cari buku berdasarkan kategori
@@ -34,6 +35,7 @@ class Book extends Model
         });
     }
 
+    // query scope (local)
     public function scopeCategories(Builder $query, $category): void
     {
         // jika ada request kategori, maka cari buku berdasarkan kategori
@@ -52,5 +54,21 @@ class Book extends Model
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class, 'category_id');
+    }
+
+    // untuk mengubah parameter id pada route detail dashboard buku, menjadi slug
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
+    }
+
+    // untuk generate otomatis slug berdasarkan title dari sebuah buku
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
     }
 }

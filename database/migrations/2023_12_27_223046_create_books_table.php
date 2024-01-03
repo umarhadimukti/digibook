@@ -17,9 +17,8 @@ return new class extends Migration
             $table->foreignId('category_id');
             $table->string('title');
             $table->string('slug')->unique();
-            $table->text('excerpt');
             $table->text('description');
-            $table->string('cover');
+            $table->string('cover')->nullable();
             $table->string('book');
             $table->float('rating');
             $table->timestamps();

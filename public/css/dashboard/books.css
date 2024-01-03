@@ -3,7 +3,6 @@
 body {
   font-family: 'Poppins';
 }
-
 .row1 h5 {
   font-size: 20px;
   font-weight: 600;
@@ -32,33 +31,8 @@ body {
   font-weight: 600;
 }
 
-.row1 .wrapper-navigation-2 {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  border-radius: 10px;
-  padding: 10px;
-}
-.wrapper-navigation-2 .link-item {
-  border-radius: 5px;
-  text-decoration: none;
-  color: black;
-  padding: 15px 25px;
-  background-color: #ebeded;
-  display: flex;
-  gap: 10px;
-  justify-content-center: center;
-  align-items: center;
-}
-.wrapper-navigation-2 .link-item:hover {
-  background-color: #e3e1e1;
-}
-.link-item ion-icon {
-  font-size: 30px;
-}
-.link-item h5 {
-  font-size: 20px;
-  font-weight: 500;
-  position: relative;
-  top: 2px;
+.btn-hapus {
+  border: none;
+  padding: 0px;
+  margin: 0px;
 }
