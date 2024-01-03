@@ -36,7 +36,7 @@ class AuthController extends Controller
         }
 
         // jika email atau password salah, kirim session error
-        return back()->with('error', 'email atau password salah');
+        return back()->with('error', 'email atau password salah')->withInput();
     }
 
     public function logout(Request $request): RedirectResponse
