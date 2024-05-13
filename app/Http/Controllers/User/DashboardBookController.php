@@ -48,8 +48,8 @@ class DashboardBookController extends Controller
             'category_id' => 'required',
             'description' => 'required',
             'rating' => 'required|numeric',
-            'book' => 'required|file|mimes:pdf|max:25000',
-            'cover' => 'required|image|file|mimes:png,jpg,jpeg,svg|max:5000',
+            'book' => 'required|file|mimes:pdf|max:100000',
+            'cover' => 'required|image|file|mimes:png,jpg,jpeg,svg|max:20000',
             'user_id' => 'required',
         ]);
 
@@ -89,8 +89,8 @@ class DashboardBookController extends Controller
             'category_id' => 'required',
             'description' => 'required',
             'rating' => 'required|numeric',
-            'book' => 'required|file|mimes:pdf|max:25000',
-            'cover' => 'required|image|file|mimes:png,jpg,jpeg,svg|max:5000',
+            'book' => 'required|file|mimes:pdf|max:100000',
+            'cover' => 'required|image|file|mimes:png,jpg,jpeg,svg|max:20000',
             'user_id' => 'required',
         ];
 
@@ -107,8 +107,11 @@ class DashboardBookController extends Controller
 
         // jika ada file cover dan book, upload file ke storage dan juga hapus file yang lama
         if ($request->hasFile('cover') && $request->hasFile('book')) {
-            $validated['book'] = $validated['book']->storeAs('public/books', $bookName);
-            $validated['cover'] = $validated['cover']->storeAs('public/covers', $coverName);
+            $validated['book']->storeAs('public/books', $bookName);
+            $validated['cover']->storeAs('public/covers', $coverName);
+
+            $validated['book'] = $bookName;
+            $validated['cover'] = $coverName;
 
             if ($request->oldcover && $request->oldbook) {
                 Storage::delete($request->oldcover);

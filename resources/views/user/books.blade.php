@@ -145,7 +145,7 @@
               <!-- Slides -->
               <a href="/dashboard/book/{{ $book->slug }}" class="swiper-slide">
                 <div class="wrapper-book">
-                  <img src="{{ asset('storage/covers/'.$book->cover) }}">
+                  <img src="{{ asset('storage/covers/'.$book->cover) }}" width="230">
                 </div>
               </a>
               @endforeach
