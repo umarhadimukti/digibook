@@ -31,16 +31,21 @@ class CategoryController extends Controller
 
     public function store(Request $request): RedirectResponse
     {
+
         $validate = $request->validate([
             'name' => 'required|min:3|unique:categories',
             'slug' => 'required|unique:categories',
-            'image' => 'required|image|file|mimes:png,jpg,jpeg,svg|max:5000'
+            'image' => 'required|image|file|mimes:png,jpg,jpeg,svg|max:5000',
         ]);
 
-        $imageName = time() . '.' . $request->file('image')->extension();
-
+        
         if ($request->hasFile('image')) {
-            $validate['image'] = $request->file('image')->storeAs('category-images', $imageName);
+            $imageName = time() . '.' . $request->file('image')->getClientOriginalExtension();
+            $validate['image'] = $imageName;
+
+            $request->file('image')->storeAs('category-images', $imageName);
+
+            $request->image->move(public_path('img/category-images'), $imageName);
         }
 
         Category::create($validate);

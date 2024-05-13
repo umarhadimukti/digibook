@@ -25,11 +25,13 @@
             <a href="/dashboard?category={{ $category->slug }}" class="swiper-slide">
               <div class="wrapper-category">
                 @if ($category->image)
-                  <img src="{{ asset('storage/' . $category->image) }}" width="450" height="250">
+                  <img src="{{ asset('img/category-images/' . $category->image) }}" width="450" height="250">
                 @else
                   <img src="https://source.unsplash.com/650x450?{{ $category->name }}">
                 @endif
-                <h4 class="text-center">{{ $category->name }}</h4>
+                <div class="category-name">
+                  <h4 class="text-center">{{ $category->name }}</h4>
+                </div>
               </div>
             </a>
             @endforeach

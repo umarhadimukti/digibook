@@ -17,7 +17,7 @@
       <div class="row1 row gap-3">
         <div class="col-12 col-md-3">
           <div class="book-cover">
-            <img src="{{ asset('storage/' . $book->cover) }}" alt="">
+            <img src="{{ asset('storage/covers/'.$book->cover) }}" alt="">
           </div>
         </div>
         <div class="col-12 col-md-8">

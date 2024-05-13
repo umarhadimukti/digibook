@@ -54,13 +54,16 @@ class DashboardBookController extends Controller
         ]);
 
         // mengubah nama file
-        $bookName = time() . '.' . $request->book->extension();
-        $coverName = time() . '.' . $request->cover->extension();
+        $bookName = time() . '.' . $request->book->getClientOriginalExtension();
+        $coverName = time() . '.' . $request->cover->getClientOriginalExtension();
 
         // simpan file yang di upload ke folder storage/public/app/books atau storage/public/app/covers
         if ($request->hasFile('book') && $request->hasFile('cover')) {
-            $validated['book'] = $request->file('book')->storeAs('books', $bookName);
-            $validated['cover'] = $request->file('cover')->storeAs('covers', $coverName);
+            $request->file('book')->storeAs('public/books', $bookName);
+            $request->file('cover')->storeAs('public/covers', $coverName);
+
+            $validated['book'] = $bookName;
+            $validated['cover'] = $coverName;
         }
 
         // simpan data ke database
@@ -104,8 +107,8 @@ class DashboardBookController extends Controller
 
         // jika ada file cover dan book, upload file ke storage dan juga hapus file yang lama
         if ($request->hasFile('cover') && $request->hasFile('book')) {
-            $validated['book'] = $validated['book']->storeAs('books', $bookName);
-            $validated['cover'] = $validated['cover']->storeAs('covers', $coverName);
+            $validated['book'] = $validated['book']->storeAs('public/books', $bookName);
+            $validated['cover'] = $validated['cover']->storeAs('public/covers', $coverName);
 
             if ($request->oldcover && $request->oldbook) {
                 Storage::delete($request->oldcover);

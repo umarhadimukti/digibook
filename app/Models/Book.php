@@ -26,7 +26,7 @@ class Book extends Model
     {
         // jika ada request pencarian, maka cari buku berdasarkan keyword
         $query->when($filters['keyword'] ?? false, function ($query, $keyword) {
-            $query->where("title", "like", "%" . $keyword . "%")->orWhere("description", "like", "%" . $keyword . "%");
+            $query->where("title", "ilike", "%" . $keyword . "%")->orWhere("description", "ilike", "%" . $keyword . "%");
         });
 
         // jika ada request kategori, maka cari buku berdasarkan kategori

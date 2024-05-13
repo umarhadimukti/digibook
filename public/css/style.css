@@ -48,11 +48,11 @@ body {
   overflow: hidden;
 }
 .swiper1 .swiper-slide {
-  background: #D8E4EA; /* Warna biru terang dengan transparansi */
+  background: #e9ecee; /* Warna biru terang dengan transparansi */
   padding: 25px 20px 20px 20px;
   backdrop-filter: blur(40px) brightness(1.2); /* Efek blur dengan brightness */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan */
-  border-radius: 20px;
+  border-radius: 15px;
   height: 300px;
   text-decoration: none;
 }

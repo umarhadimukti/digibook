@@ -10,9 +10,9 @@ class DownloadController extends Controller
     public function public_download(Request $request)
     {
         // cek apakah ada file di public storage
-        if (Storage::disk('public')->exists($request->book)) {
+        if (Storage::disk('public')->exists('books/' . $request->book)) {
             // temukan path file nya
-            $file_path = Storage::path($request->book);
+            $file_path = Storage::path('/public/books/' . $request->book);
             // ambil file nya
             $content = file_get_contents($file_path);   
 

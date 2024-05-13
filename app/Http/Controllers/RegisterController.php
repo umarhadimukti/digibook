@@ -24,6 +24,7 @@ class RegisterController extends Controller
             'username' => 'required|min:3|max:50|unique:users',
             'email' => 'required|email:dns|unique:users',
             'password' => 'required|min:6|confirmed',
+            'g-recaptcha-response' => 'required|captcha',
         ]);
 
         User::create([

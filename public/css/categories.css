@@ -29,18 +29,23 @@ body {
 .swiper1 .swiper-slide:active {
   cursor: grabbing;
 }
-.wrapper-category img {
-  width: 100%;
-  border-radius: 10px;
-  filter: brightness(0.4); /* Menggelapkan gambar */
+.wrapper-category {
   position: relative;
+  border: 2px solid black;
+}
+.wrapper-category img {
+  position: absolute;
+  top: 10px;
   left: -20px;
-  bottom: -10px;
+  width: 100%;
+  border-radius: 15px;
+  filter: brightness(0.4); /* Menggelapkan gambar */
   border: 2px solid red;
 }
 .wrapper-category h4 {
-  position: relative;
-  bottom: 140px;
+  position: absolute;
+  top: 110px;
+  left: 100px;
   color: #e6ebf2;
 }
 .swiper1 .swiper-pagination {

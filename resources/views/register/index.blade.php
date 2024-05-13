@@ -51,6 +51,20 @@
               <div>
                 <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" placeholder="Konfirmasi Password" required>
               </div>
+
+              {!! NoCaptcha::renderJs() !!}
+              {!! NoCaptcha::display() !!}
+              @if($errors->has('g-recaptcha-response'))
+              <div class="invalid-feedback">
+                {{ $errors->first('g-recaptcha-response') }}
+              </div>
+              @endif
+              {{-- @error('g-recaptcha-response')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+              @enderror --}}
+
               <button type="submit" name="login" class="btn btn-register">Daftar Akun</button>
               <a href="{{ route('login') }}" class="btn btn-to-login">Masuk</a>
             </form>

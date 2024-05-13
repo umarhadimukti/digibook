@@ -46,7 +46,7 @@
               <!-- Slides -->
               <a href="/dashboard/book/{{ $book->slug }}" class="swiper-slide">
                 <div class="wrapper-book">
-                  <img src={{ $book->cover }}>
+                  <img src="{{ 'storage/covers/' . $book->cover }}">
                   <div class="description">
                     <h5 class="text-dark">{{ $book->title }}</h5>
                     <small class="text-secondary fw-light">Dipost oleh {{ $book->user->name }}</small>
@@ -86,7 +86,7 @@
                 <!-- Slides -->
                 <a href="/dashboard/book/{{ $books_filter[$i]->slug }}" class="swiper-slide">
                   <div class="wrapper-book">
-                    <img src={{ $books_filter[$i]->cover }}>
+                    <img src="{{ 'storage/covers/' . $books_filter[$i]->cover }}">
                     <div class="description">
                       <h5 class="text-dark">{{ $books_filter[$i]->title }}</h5>
                       <small class="text-secondary fw-light">Dipost oleh {{ $books_filter[$i]->user->name }}</small>
@@ -114,7 +114,7 @@
                 <!-- Slides -->
                 <a href="/dashboard/book/{{ $books_categories[$i]->slug }}" class="swiper-slide">
                   <div class="wrapper-book">
-                    <img src={{ $books_categories[$i]->cover }}>
+                    <img src="{{ asset('storage/covers/' . $books_categories[$i]->cover) }}">
                     <div class="description">
                       <h5 class="text-dark">{{ $books_categories[$i]->title }}</h5>
                       <small class="text-secondary fw-light">Dipost oleh {{ $books_categories[$i]->user->name }}</small>
@@ -145,7 +145,7 @@
               <!-- Slides -->
               <a href="/dashboard/book/{{ $book->slug }}" class="swiper-slide">
                 <div class="wrapper-book">
-                  <img src={{ $book->cover }}>
+                  <img src="{{ asset('storage/covers/'.$book->cover) }}">
                 </div>
               </a>
               @endforeach
