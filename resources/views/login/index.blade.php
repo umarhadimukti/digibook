@@ -62,7 +62,7 @@
         </div>
       </div>
 
-      <p class="text-center text-secondary">&copy; 2023. Umar Hadi Mukti. Digital Book</p
+      <p class="text-center text-secondary copyright">&copy; 2024. Kelompok 5. Digital Book</p>
     </div>
 
     {{-- bootstrap js --}}

@@ -63,6 +63,7 @@ body {
 @media only screen and (max-width: 600px) {
   .container-image-login {
     display: none;
+    border: 2px solid black;
   }
   .wrapper-login {
     height: 100vh;

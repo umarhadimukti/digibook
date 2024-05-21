@@ -59,6 +59,9 @@
                 {{ $errors->first('g-recaptcha-response') }}
               </div>
               @endif
+
+              @if ($errors  )
+
               {{-- @error('g-recaptcha-response')
               <div class="invalid-feedback">
                 {{ $message }}
@@ -71,7 +74,6 @@
           </div>
         </div>
       </div>
-      <p class="text-center text-secondary">&copy; 2023. Umar Hadi Mukti. Digital Book</p>
     </div>
 
     {{-- bootstrap js --}}

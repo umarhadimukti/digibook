@@ -118,6 +118,7 @@ body {
 
 
 @media only screen and (max-width: 600px) {
+
   .row1 .input-wrapper input {
     width: 100%;
   }

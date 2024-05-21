@@ -59,6 +59,9 @@ body {
   background-color: #f7d165;
   color: black;
 }
+p.copyright {
+  margin-top: 150px;
+}
 
 @media only screen and (max-width: 600px) {
   .container-image-login {
